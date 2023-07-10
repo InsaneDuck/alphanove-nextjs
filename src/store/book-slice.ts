@@ -1,4 +1,4 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {Book} from "@/types/Book";
 
 export type BookState = {
@@ -17,13 +17,13 @@ export const bookSlice = createSlice({
     name: 'book',
     initialState,
     reducers: {
-        getAllBooks(state) {
-            if (state.books.length == 0) {
-                //fetchBook().then()
-            }
+        getAllBooks(){
 
         },
-        getBookById(state) {
+        setAllBooks(state,action:PayloadAction<Book[]>) {
+            state.books.push(...action.payload)
+        },
+        getBookById(state, payload) {
 
         },
         searchBooks(state) {
@@ -32,16 +32,11 @@ export const bookSlice = createSlice({
     }
 })
 
-const fetchBook = async (url: string): Promise<Book[]> => {
-    let books: Book[] = [];
 
 
-
-    return books;
-}
 
 export const {
-    getAllBooks,
+    setAllBooks,
     searchBooks,
     getBookById
 } = bookSlice.actions

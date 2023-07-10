@@ -13,8 +13,8 @@ const BookCard: FC<BookCardProps> = props => {
         <div onClick={props.onClick} className={styles.card}>
             <div className={styles.cardContent}>
                 <div className={styles.imageContainer}>
-                    {props.book.coverImage ? <Image src={props.book.coverImage} alt={"Book Image"}/> :
-                        <div>Book Image</div>}
+                    {/*{props.book.coverImage ? <Image src={props.book.coverImage} width={`${50}`} height={`${50}`} alt={"Book Image"}/> :*/}
+                    {/*    <div>Book Image</div>}*/}
                 </div>
                 <p className={styles.cardText}>{props.book.title}</p>
                 <button className={styles.addToCartButton}>Add to Basket</button>
