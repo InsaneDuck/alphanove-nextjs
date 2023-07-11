@@ -5,7 +5,7 @@ import {Book} from "@/types/Book";
 import {RootState} from "@/store/store";
 import {useEffect} from "react";
 import {BookEndpoints} from "@/store/api-endpoints";
-import {setAllBooks} from "@/store/book-slice";
+import {bookActions} from "@/store/book-slice";
 
 
 let initial = true;
@@ -23,7 +23,7 @@ const BooksContainer = () => {
                 'Content-Type': 'application/json',
             }
         }).then(response => response.json())
-            .then(data => dispatch(setAllBooks(data._embedded.books)));
+            .then(data => dispatch(bookActions.setAllBooks(data._embedded.books)));
     }, [dispatch])
 
 

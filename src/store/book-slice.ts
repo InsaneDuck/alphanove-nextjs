@@ -17,14 +17,14 @@ export const bookSlice = createSlice({
     name: 'book',
     initialState,
     reducers: {
-        getAllBooks(){
+        getAllBooks() {
 
         },
-        setAllBooks(state,action:PayloadAction<Book[]>) {
+        setAllBooks(state, action: PayloadAction<Book[]>) {
             state.books.push(...action.payload)
         },
-        getBookById(state, payload) {
-
+        getBookById(state, action: PayloadAction<Book>) {
+            state.book = action.payload
         },
         searchBooks(state) {
 
@@ -33,12 +33,6 @@ export const bookSlice = createSlice({
 })
 
 
-
-
-export const {
-    setAllBooks,
-    searchBooks,
-    getBookById
-} = bookSlice.actions
+export const bookActions = bookSlice.actions
 
 export const bookReducer = bookSlice.reducer;

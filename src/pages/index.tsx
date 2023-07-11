@@ -1,12 +1,10 @@
-import { Inter } from 'next/font/google'
-import BooksContainer from "@/components/BooksContainer";
+import {Inter} from 'next/font/google'
+import Layout from "@/components/Layout";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({subsets: ['latin']})
 
 export default function Home() {
-  return (
-    <>
-      <BooksContainer/>
-    </>
-  )
+    return (
+        <Layout/>
+    )
 }

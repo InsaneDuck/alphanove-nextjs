@@ -1,0 +1,15 @@
+.layout {
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.layoutLeft {
+    float: left;
+    width: 30%;
+}
+
+.layoutRight {
+    float: left;
+    width: 70%;
+}
